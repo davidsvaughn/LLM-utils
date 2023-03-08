@@ -1,0 +1,47 @@
+// This does evaluation using the training script, by just cutting off training after 10 batches...
+["llm_train.py",
+"--eval_steps", "10",
+"--save_steps", "10000",
+"--logging_steps", "201",
+"--evaluation_strategy", "steps",
+"--group_by_length", "True", "--pad_to_max_length", "False", "--fp16", 
+// "--overwrite_cache", 
+"--overwrite_output_dir", 
+"--task_name", "sst2",
+"--do_train", 
+"--do_eval", "--ignore_mismatched_sizes",
+"--max_seq_length", "512", 
+"--per_device_train_batch_size", "16",
+"--gradient_accumulation_steps", "2",
+"--per_device_eval_batch_size", "64",
+"--learning_rate", "2e-10",
+"--weight_decay", "0.01",
+"--num_train_epochs", "3", 
+"--save_strategy", "no",
+"--output_dir", "/tmp/tmp/",
+//////
+"--model_name_or_path", "./models/conv/206/roberta-858",
+"--train_file", "/home/david/code/davidsvaughn/conv/data/convmatch/grades/proc/206_train.csv",
+"--validation_file", "/home/david/code/davidsvaughn/conv/data/convdata/items/proc/108670.csv"
+//////
+// "--model_name_or_path", "/home/david/code/davidsvaughn/conv/gptj/Finetune_GPTNEO_GPTJ6B/finetuning_repo/models/207/roberta-823",
+// "--train_file", "/home/david/code/davidsvaughn/conv/data/convmatch/grades/proc/207_train.csv",
+// "--validation_file", "/home/david/code/davidsvaughn/conv/data/convdata/items/proc/56354.csv"
+//////
+// "--model_name_or_path", "/home/david/code/davidsvaughn/conv/gptj/Finetune_GPTNEO_GPTJ6B/finetuning_repo/models/67/roberta-855",
+// "--train_file", "/home/david/code/davidsvaughn/conv/data/convmatch/grades/proc/67_train.csv",
+// "--validation_file", "/home/david/code/davidsvaughn/conv/data/convdata/items/proc/56354.csv"
+//////
+// "--model_name_or_path", "/home/david/code/davidsvaughn/conv/gptj/Finetune_GPTNEO_GPTJ6B/finetuning_repo/models/456/roberta-848",
+// "--train_file", "/home/david/code/davidsvaughn/conv/data/convmatch/grades/proc/456_train.csv",
+// "--validation_file", "/home/david/code/davidsvaughn/conv/data/convdata/items/proc/55431.csv"
+//////
+// "--model_name_or_path", "/home/david/code/davidsvaughn/conv/gptj/Finetune_GPTNEO_GPTJ6B/finetuning_repo/models/203/roberta-851",
+// "--train_file", "/home/david/code/davidsvaughn/conv/data/convmatch/grades/proc/203_train.csv",
+// "--validation_file", "/home/david/code/davidsvaughn/conv/data/convdata/items/proc/101608.csv"
+//////
+// "--model_name_or_path", "/home/david/code/davidsvaughn/conv/gptj/Finetune_GPTNEO_GPTJ6B/finetuning_repo/models/34/roberta-850",
+// "--train_file", "/home/david/code/davidsvaughn/conv/data/convmatch/grades/proc/34_train.csv",
+// "--validation_file", "/home/david/code/davidsvaughn/conv/data/convdata/items/proc/101608.csv"
+//////
+]
